@@ -10,6 +10,7 @@ resources:
     type: github
     endpoint: sks007
     name: sanks21/Two
+    ref: Two/Release_Two
 
 trigger:
 - main
@@ -28,5 +29,6 @@ stages:
     
     steps:
     - checkout: TwoGitHubRepo
+    
     - script: dir $(Build.SourcesDirectory)
 
