@@ -26,3 +26,5 @@ steps:
 - script: dir $(Build.SourcesDirectory)
 
 - checkout: TwoGitHubRepo
+- script: dir $(Build.BinariesDirectory)
+
