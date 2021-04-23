@@ -7,7 +7,7 @@ resources:
   repositories:
   - repository: MyGitHubRepo 
     type: github
-    endpoint: MyGitHubServiceConnection
+    endpoint: azureSubscription
     name: Release_one
 
 trigger:
