@@ -31,7 +31,7 @@ stages:
     - checkout: self
     
     - script: |
-        git remote add Two ../Two
+        git remote add sanks21_Two ../sanks21_Two
         a="$(git remote update)"
         echo "$a"
 
