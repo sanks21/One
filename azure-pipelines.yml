@@ -28,7 +28,8 @@ stages:
       vmImage: ubuntu-latest
     
     steps:
-    - checkout: TwoGitHubRepo
+    - checkout: self
     
-    - script: dir $(Build.SourcesDirectory)
+    - script: |
+        dir $(Build.SourcesDirectory)
 
