@@ -33,7 +33,7 @@ stages:
     
     
     - script: |
-        a="$(dir $(Build.SourcesDirectory))"
+        a="$(git diff --name-only --diff-filter=D origin/main...origin/Release_Two)"
         echo "$a" > file.txt
 
         mkdir changedzipfiles
