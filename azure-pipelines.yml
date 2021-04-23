@@ -31,7 +31,5 @@ stages:
     - checkout: TwoGitHubRepo
     
     - script: |
-        git remote add sanks21_Two ../sanks21_Two
-        a="$(git remote update)"
-        echo "$a"
+        dir $(Build.SourcesDirectory)
 
