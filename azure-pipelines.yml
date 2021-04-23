@@ -9,6 +9,11 @@ resources:
     type: github
     endpoint: sks007
     name: sanks21/One
+  
+  - repository: MyGitHubRepo 
+    type: github
+    endpoint: sks007
+    name: sanks21/Two
 
 trigger:
 - main
