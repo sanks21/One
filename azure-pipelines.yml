@@ -34,9 +34,8 @@ stages:
     
     - script: |
         a="$(dir $(Build.SourcesDirectory))"
-        echo "$a"
         echo "$a" > file.txt
-        
+
         mkdir changedzipfiles
 
         while read p; do
