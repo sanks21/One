@@ -9,7 +9,7 @@ resources:
   - repository: TwoGitHubRepo 
     type: github
     endpoint: sks007
-    name: sanks21/Two
+    name: sanks21_Two
     ref: Release_Two
 
 trigger:
