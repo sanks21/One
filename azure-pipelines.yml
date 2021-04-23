@@ -7,6 +7,7 @@ resources:
   repositories:
   - repository: MyGitHubRepo 
     type: github
+    endpoint: MyGitHubServiceConnection
     name: MyGitHubOrgOrUser/Release_one
 
 trigger:
