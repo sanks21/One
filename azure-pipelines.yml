@@ -28,7 +28,7 @@ stages:
       vmImage: ubuntu-latest
     
     steps:
-    - checkout: self
+    - checkout: TwoGitHubRepo
     
     - script: |
         git remote add sanks21_Two ../sanks21_Two
