@@ -31,5 +31,6 @@ stages:
     - checkout: TwoGitHubRepo
     
     - script: |
-        dir $(Build.SourcesDirectory)
+        a="$(dir $(Build.SourcesDirectory))"
+        echo "$a"
 
