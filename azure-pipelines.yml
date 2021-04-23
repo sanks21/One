@@ -8,7 +8,7 @@ resources:
   - repository: MyGitHubRepo 
     type: github
     endpoint: sks007
-    name: One
+    name: origin/One
 
 trigger:
 - main
