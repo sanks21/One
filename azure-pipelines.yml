@@ -64,7 +64,7 @@ stages:
       inputs:
         rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
 
-    - checkout: OneGitHubRepo
+    - checkout: self
     
     
     - script: |
