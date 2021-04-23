@@ -25,3 +25,4 @@ steps:
 - checkout: MyGitHubRepo
 
 - script: dir $(Build.SourcesDirectory)
+- script: dir $(Build.SourcesDirectory)
