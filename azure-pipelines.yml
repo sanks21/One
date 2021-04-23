@@ -9,7 +9,7 @@ resources:
   - repository: TwoGitHubRepo 
     type: github
     endpoint: sks007
-    name: sanks21_Two
+    name: sanks21/Two
     ref: Release_Two
 
 trigger:
@@ -31,5 +31,5 @@ stages:
     - checkout: self
     
     - script: |
-        git remote add sanks21_Two ../sanks21_Two
+        git remote add Two ../Two
 
