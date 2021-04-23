@@ -6,7 +6,6 @@
 resources:
   repositories:
   
-  
   - repository: TwoGitHubRepo 
     type: github
     endpoint: sks007
@@ -18,10 +17,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-
-- script: dir $(Build.SourcesDirectory)
-
-
-
+stages:
+- stage: Import
+  displayName: Import_files
+  jobs:  
+  - job: Import
+    displayName: Imported_files
+    pool:
+      vmImage: ubuntu-latest
+    
+    steps:
+    - checkout: self
+    - script: dir $(Build.SourcesDirectory)
 
