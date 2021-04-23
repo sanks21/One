@@ -5,12 +5,12 @@
 
 resources:
   repositories:
-  - repository: MyGitHubRepo 
+  - repository: OneGitHubRepo 
     type: github
     endpoint: sks007
     name: sanks21/One
   
-  - repository: MyGitHubRepo 
+  - repository: TwoGitHubRepo 
     type: github
     endpoint: sks007
     name: sanks21/Two
@@ -22,7 +22,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- checkout: MyGitHubRepo
+- checkout: OneGitHubRepo
+- script: dir $(Build.SourcesDirectory)
 
-- script: dir $(Build.SourcesDirectory)
-- script: dir $(Build.SourcesDirectory)
+- checkout: TwoGitHubRepo
+- script: dir $(Build.BinariesDirectory)
