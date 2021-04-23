@@ -25,5 +25,3 @@ steps:
 - checkout: OneGitHubRepo
 - script: dir $(Build.SourcesDirectory)
 
-- checkout: TwoGitHubRepo
-- script: dir $(Build.SourcesDirectory)
