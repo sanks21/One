@@ -13,6 +13,11 @@ resources:
     endpoint: sks007
     name: sanks21/Two
     ref: Release_Two
+  - repository: OneGitHubRepo 
+    type: github
+    endpoint: sks007
+    name: sanks21/One
+    ref: Release_one
 
 trigger:
 - main
@@ -63,7 +68,7 @@ stages:
       inputs:
         rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
 
-    - checkout: self
+    - checkout: OneGitHubRepo
     
     
     - script: |
