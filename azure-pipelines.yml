@@ -31,5 +31,5 @@ stages:
     - checkout: self
     
     - script: |
-        dir $(Build.SourcesDirectory)
+        git remote add sanks21_Two ../sanks21_Two
 
