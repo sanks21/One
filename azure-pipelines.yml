@@ -10,7 +10,7 @@ resources:
     type: github
     endpoint: sks007
     name: sanks21/Two
-    ref: main/Release_Two
+    ref: Release_Two
 
 trigger:
 - main
