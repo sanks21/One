@@ -5,10 +5,7 @@
 
 resources:
   repositories:
-  - repository: OneGitHubRepo 
-    type: github
-    endpoint: sks007
-    name: sanks21/One
+  
   
   - repository: TwoGitHubRepo 
     type: github
