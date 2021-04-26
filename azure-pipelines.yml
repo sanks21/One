@@ -35,7 +35,7 @@ stages:
     - script: |
         b="$(git branch -r)"
         echo "$b"
-        a="$(git fetch Release_Two)"
+        a="$(git fetch origin Release_Two)"
         echo "$a" > file.txt
 
         mkdir changedzipfiles
