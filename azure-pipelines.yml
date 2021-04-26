@@ -36,11 +36,9 @@ stages:
     - script: |
         a="$(git branch -r)"
         echo "$a"
-        b="$(git fetch origin)"
-        echo "$b"
         git config --global user.email sks2296@gmail.com
         git config --global user.name sanks21
-        c="$(git merge origin/main)"
+        c="$(git pull)"
         echo "$c" > file.txt
 
         mkdir changedzipfiles
