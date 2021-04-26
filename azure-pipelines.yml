@@ -54,8 +54,8 @@ stages:
     - checkout: OneGitHubRepo
 
     - script: |
-        a="$(git diff --name-only --diff-filter=ACMRT origin/main...origin/Release_one)"
-        echo "$a" > file.txt
+        b="$(git diff --name-only --diff-filter=ACMRT origin/main...origin/Release_one)"
+        echo "$b" > file.txt
 
         mkdir alreadyzipfiles
 
