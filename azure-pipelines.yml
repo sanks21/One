@@ -33,23 +33,7 @@ stages:
       vmImage: ubuntu-latest
     
     steps:
-    - checkout: TwoGitHubRepo
     
-    
-    - script: |
-        a="$(git diff --name-only --diff-filter=ACMRT origin/main...origin/Release_Two)"
-        echo "$a" > file.txt
-
-        mkdir changedzipfiles
-
-        while read p; do
-            echo "$p"
-            cp "$p" changedzipfiles
-        done <file.txt
-
-         
-    
-    - script: zip -r changedzipfiles.zip changedzipfiles
     
     - checkout: OneGitHubRepo
 
