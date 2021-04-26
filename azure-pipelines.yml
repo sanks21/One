@@ -51,23 +51,9 @@ stages:
     
     - script: zip -r changedzipfiles.zip changedzipfiles
     
-    - checkout: self
+    - checkout: OneGitHubRepo
 
-    - script: |
-        b="$(git diff --name-only --diff-filter=ACMRT origin/main...origin/Release_one)"
-        echo "$b" > file.txt
-
-        mkdir alreadyzipfiles
-
-        while read p; do
-            echo "$p"
-            cp "$p" alreadyzipfiles
-        done <file.txt
-
-         
     
-    - script: zip -r alreadyzipfiles.zip alreadyzipfiles
-
     - task: CopyFiles@2
       inputs:
           Contents: "*zip"
