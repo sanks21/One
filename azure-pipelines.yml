@@ -41,9 +41,9 @@ stages:
     - script: |
         a="$(git branch -r)"
         echo "$a"
-        git clone https://github.com/sanks21/One.git
+        git clone https://github.com/sanks21/One.git temp-repo
         ls
-        cd Two
+        cd temp-repo
         ls
         echo "$c" > file.txt
 
