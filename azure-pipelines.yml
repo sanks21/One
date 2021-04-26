@@ -9,13 +9,13 @@ resources:
     type: github
     endpoint: sks007
     name: sanks21/One
-    ref: Release_one
+    
   
   - repository: TwoGitHubRepo 
     type: github
     endpoint: sks007
     name: sanks21/Two
-    ref: Release_Two
+    
     
   
 
@@ -41,10 +41,10 @@ stages:
     - script: |
         a="$(git branch -r)"
         echo "$a"
+        cd ..
+        git clone https://github.com/sanks21/Two.git
         ls
-        git config --global user.email sks2296@gmail.com
-        git config --global user.name sanks21
-        c="$(git merge origin/)"
+        cd Two
         echo "$c" > file.txt
 
         mkdir changedzipfiles
