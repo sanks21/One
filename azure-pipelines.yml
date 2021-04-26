@@ -51,7 +51,7 @@ stages:
     
     - script: zip -r changedzipfiles.zip changedzipfiles
     
-    - checkout: sanks21_One
+    - checkout: OneGitHubRepo
 
     - script: |
         b="$(git diff --name-only --diff-filter=ACMRT origin/main...origin/Release_one)"
