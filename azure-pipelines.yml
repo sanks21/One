@@ -38,7 +38,7 @@ stages:
         echo "$a"
         b="$(git fetch origin)"
         echo "$b"
-        c="$(git merge origin/Release_Two)"
+        c="$(git merge origin/main)"
         echo "$c" > file.txt
 
         mkdir changedzipfiles
