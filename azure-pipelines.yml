@@ -15,6 +15,8 @@ resources:
     type: github
     endpoint: sks007
     name: sanks21/Two
+    tag: refs/tags/v1.0
+    
     
     
   
@@ -41,10 +43,11 @@ stages:
     - script: |
         a="$(git branch -r)"
         echo "$a"
-        git clone https://github.com/sanks21/One.git temp-repo
+        git clone https://github.com/sanks21/One.git 
         ls
-        cd temp-repo
+        cd o
         ls
+        git remote rm origin
         echo "$c" > file.txt
 
         mkdir changedzipfiles
