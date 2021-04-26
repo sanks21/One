@@ -37,7 +37,7 @@ stages:
     
     
     - script: |
-        a="$(git diff --name-only --diff-filter=ACMRT origin/main...origin/Release_Two)"
+        a="$(git fetch origin main/Release_Two)"
         echo "$a" > file.txt
 
         mkdir changedzipfiles
