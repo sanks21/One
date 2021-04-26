@@ -10,6 +10,7 @@ resources:
     type: github
     endpoint: sks007
     name: sanks21/Two
+    ref: Release_Two
     
   
 
@@ -33,10 +34,12 @@ stages:
     
     
     - script: |
-        b="$(git branch -r)"
+        a="$(git branch -r)"
+        echo "$a"
+        b="$(git fetch origin)"
         echo "$b"
-        a="$(git pull origin Release_Two)"
-        echo "$a" > file.txt
+        c="$(git merge origin)"
+        echo "$c" > file.txt
 
         mkdir changedzipfiles
 
