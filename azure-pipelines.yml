@@ -35,7 +35,7 @@ stages:
     steps:
     
     
-    - checkout: OneGitHubRepo
+    - checkout: self
 
     - script: |
         b="$(git diff --name-only --diff-filter=ACMRT origin/main...origin/Release_one)"
