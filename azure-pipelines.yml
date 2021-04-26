@@ -5,7 +5,11 @@
 
 resources:
   repositories:
-  
+  - repository: OneGitHubRepo 
+    type: github
+    endpoint: sks007
+    name: sanks21/One
+    ref: Release_one
   - repository: TwoGitHubRepo 
     type: github
     endpoint: sks007
@@ -47,7 +51,7 @@ stages:
     
     - script: zip -r changedzipfiles.zip changedzipfiles
     
-    - checkout: self
+    - checkout: OneGitHubRepo
 
     - script: |
         a="$(git diff --name-only --diff-filter='' origin/main...origin/Release_one)"
