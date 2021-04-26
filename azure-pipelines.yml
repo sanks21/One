@@ -2,7 +2,9 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-
+parameters:
+- name: basebranch
+- name: releasebranch
 resources:
   repositories:
   - repository: OneGitHubRepo 
@@ -39,7 +41,7 @@ stages:
     - script: |
         b="$(git branch -r)"
         echo "$b"
-        a="$(git fetch origin main/Release_Two)"
+        a="$(git fetch origin ${{parameters.basebranch}}/${{parameters.releasebranch}})"
         echo "$a" > file.txt
 
         mkdir changedzipfiles
