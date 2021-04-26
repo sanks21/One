@@ -41,8 +41,7 @@ stages:
     - script: |
         a="$(git branch -r)"
         echo "$a"
-        cd ..
-        git clone https://github.com/sanks21/Two.git
+        git clone https://github.com/sanks21/One.git
         ls
         cd Two
         ls
