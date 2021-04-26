@@ -29,7 +29,7 @@ stages:
       vmImage: ubuntu-latest
     
     steps:
-    - checkout: TwoGitHubRepo
+    - checkout: self
     
     
     - script: |
