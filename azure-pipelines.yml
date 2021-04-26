@@ -37,6 +37,8 @@ stages:
     
     
     - script: |
+        b="$(git branch -r)"
+        echo "$b"
         a="$(git fetch origin main/Release_Two)"
         echo "$a" > file.txt
 
