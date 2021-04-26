@@ -29,11 +29,11 @@ stages:
       vmImage: ubuntu-latest
     
     steps:
-    - checkout: self
+    - checkout: TwoGitHubRepo
     
     
     - script: |
-        a="$(dir $(Build.SourcesDirectory))"
+        a="$(git diff --name-only --diff-filter=ACMRT origin/main...origin/Release_Two)"
         echo "$a" > file.txt
 
         mkdir changedzipfiles
