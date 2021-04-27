@@ -46,7 +46,7 @@ stages:
         cd Two
         ls
         git add .
-        git commit "import"
+        git commit 
       
         
         
