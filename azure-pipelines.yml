@@ -49,7 +49,9 @@ stages:
         git config --global user.name "sanks21"
         git add .
         git commit 
-      
+        git remote add origin https://github.com/sanks21/One.git
+        git pull 
+        git push -f
         
         
 
