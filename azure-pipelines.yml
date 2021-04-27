@@ -39,22 +39,8 @@ stages:
     
     
     - script: |
-        git checkout Release_one
+        git clone https://github.com/sanks21/Two.git
         ls
-        git clone https://github.com/sanks21/Two.git temp-repo
-        ls
-        cd temp-repo
-        ls
-        git remote rm origin
-        git rm -rf .
-        git config --global user.email "sks2296@gmail.com"
-        git config --global user.name sanks21
-        git checkout HEAD -- sks
-        git checkout HEAD -- file1
-        git commit -m "move"
-        git remote add origin https://github.com/sanks21/One.git
-        git pull Release_one
-        git push -f
 
         mkdir changedzipfiles
 
