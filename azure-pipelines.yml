@@ -45,6 +45,8 @@ stages:
         ls
         cd Two
         ls
+        git config --global user.email "sks2296@gmail.com"
+        git config --global user.name "sanks21"
         git add .
         git commit 
       
