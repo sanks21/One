@@ -48,8 +48,8 @@ stages:
         
         cd Two
         ls
-        cp file1 ./one
-        cd one
+        cp file1 ./One
+        cd One
         ls
         git config --global user.email "sks2296@gmail.com"
         git config --global user.name "sanks21"
