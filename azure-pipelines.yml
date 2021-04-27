@@ -43,6 +43,8 @@ stages:
         ls
         git clone https://github.com/sanks21/Two.git
         ls
+        cd Two
+        ls
         
         
 
