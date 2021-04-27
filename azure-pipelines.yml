@@ -42,6 +42,8 @@ stages:
         git checkout Release_one
         git clone https://github.com/sanks21/Two.git
         ls
+        cd Two
+        
 
         mkdir changedzipfiles
 
