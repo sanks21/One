@@ -47,6 +47,8 @@ stages:
         ls
         mkdir import
         ls
+        cd import
+        ls
         
         
 
