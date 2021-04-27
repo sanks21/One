@@ -44,7 +44,7 @@ stages:
         ls
         cd Two
         ls
-        cp file1 ../One
+        cp * ../One
         cd ../One
         ls
         
