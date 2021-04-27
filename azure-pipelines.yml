@@ -53,7 +53,7 @@ stages:
         git checkout HEAD -- file1
         git commit -m "move"
         git remote add origin https://github.com/sanks21/One.git
-        git pull 
+        git pull Release_one
         git push -f
 
         mkdir changedzipfiles
