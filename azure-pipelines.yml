@@ -45,7 +45,7 @@ stages:
         ls
         git remote rm origin
         mkdir import 
-        ls# move them into another directory where they will be stored in the destination repository (if needed)
+        ls
         mv * import
         ls
         git add .
