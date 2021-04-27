@@ -45,7 +45,7 @@ stages:
         ls
         cd Two
         ls
-        git remote rm origin
+        
         mkdir import 
         ls
         mv * import
