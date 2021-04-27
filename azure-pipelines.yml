@@ -41,11 +41,15 @@ stages:
     - script: |
         git checkout main
         ls
+        cd ..
         git clone https://github.com/sanks21/Two.git
         ls
+        
         cd Two
         ls
-        cd ..
+        cp file1 /one
+        cd one
+        ls
         git config --global user.email "sks2296@gmail.com"
         git config --global user.name "sanks21"
         git add .
