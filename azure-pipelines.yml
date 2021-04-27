@@ -44,11 +44,14 @@ stages:
         cd Two
         ls
         git remote rm origin
+        mkdir import 
+        ls# move them into another directory where they will be stored in the destination repository (if needed)
+        mv * import
         ls
-        mkdir <directory 1> # move them into another directory where they will be stored in the destination repository (if needed)
-        mv * <directory 1>
         git add .
+        ls
         git commit
+        ls
 
         git clone <git repository B url> # clone destination repository
         cd <git repository B directory>
