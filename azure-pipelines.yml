@@ -3,17 +3,72 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  repositories:
+  - repository: OneGitHubRepo 
+    type: github
+    endpoint: sks007
+    name: sanks21/One
+    
+  
+  - repository: TwoGitHubRepo 
+    type: github
+    endpoint: sks007
+    name: sanks21/Two
+    tag: refs/tags/v1.0
+    
+    
+    
 trigger:
 - main
 
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+- stage: Import
+  displayName: Import_files
+  jobs:  
+  - job: Import
+    displayName: Imported_files
+    pool:
+      vmImage: ubuntu-latest
+    
+    steps:
+    
+    
+    
+    - script: |
+        git checkout main
+        ls
+        
+        
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+        mkdir changedzipfiles
+
+        while read p; do
+            echo "$p"
+            cp "$p" changedzipfiles
+        done <file.txt
+
+         
+    
+    - script: zip -r changedzipfiles.zip changedzipfiles
+    
+    
+
+    
+    - task: CopyFiles@2
+      inputs:
+          Contents: "*zip"
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'changedfiles'
+        publishLocation: 'Container'
+         
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
