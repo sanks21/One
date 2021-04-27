@@ -43,8 +43,8 @@ stages:
         ls
         cd Two
         ls
-        git remote rm origin # to make sure it doesn't affect the original repository
-        git filter-branch --subdirectory-filter <directory 1> -- --all # remove all files other than the ones needed
+        git remote rm origin
+        ls
         mkdir <directory 1> # move them into another directory where they will be stored in the destination repository (if needed)
         mv * <directory 1>
         git add .
