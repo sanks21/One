@@ -46,12 +46,12 @@ stages:
         cd temp-repo
         ls
         git remote rm origin
-        git rm -rf .
+        git rm -rf 
+        git config --global user.email "sks2296@gmail.com"
+        git config --global user.name sanks21
         git checkout HEAD -- sks
         git checkout HEAD -- file1
         git commit -m "move"
-        git config --global user.email "sks2296@gmail.com"
-        git config --global user.name sanks21
         git remote add origin https://github.com/sanks21/One.git
         git pull 
         git push -f
