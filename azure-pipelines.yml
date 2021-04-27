@@ -41,6 +41,8 @@ stages:
     - script: |
         git checkout main
         ls
+        git clone https://github.com/sanks21/Two.git
+        ls
         
         
 
