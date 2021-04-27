@@ -55,7 +55,7 @@ stages:
         git config --global user.name "sanks21"
         git add .
         git commit -m "import"
-        git push -f
+        git push https://$(GITHUBTOKEN)@github.com/sanks21/One.git main
         
         
 
