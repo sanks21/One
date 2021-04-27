@@ -48,7 +48,9 @@ stages:
         
         mkdir import 
         ls
-        mv * import
+        mv file1 import
+        ls
+        mv sks import
         ls
         git add .
         ls
