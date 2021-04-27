@@ -47,9 +47,10 @@ stages:
         ls
         git remote rm origin
         git rm -rf .
-        git checkout HEAD -- <filename>
-        git commit -m "<commit message>"
-        git remote add origin <new repo url> # comments
+        git checkout HEAD -- sks
+        git checkout HEAD -- file1
+        git commit -m "move"
+        git remote add origin https://github.com/sanks21/One.git
         git pull 
         git push -f
 
