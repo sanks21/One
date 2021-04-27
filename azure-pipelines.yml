@@ -45,12 +45,7 @@ stages:
         ls
         cd Two
         ls
-        git filter-branch --subdirectory-filter import -- --all
-        ls
-        mkdir import
-        ls
-        mv * import
-        ls
+        
       
         
         
