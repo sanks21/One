@@ -41,7 +41,7 @@ stages:
     - script: |
         git clone https://github.com/sanks21/Two.git
         ls
-        cd Two
+        cd sanks21/Two
         ls
         git remote rm origin # to make sure it doesn't affect the original repository
         git filter-branch --subdirectory-filter <directory 1> -- --all # remove all files other than the ones needed
