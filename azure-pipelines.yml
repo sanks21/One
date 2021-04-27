@@ -40,6 +40,7 @@ stages:
     
     - script: |
         git checkout Release_one
+        ls
         git clone https://github.com/sanks21/Two.git
         ls
         cd Two
