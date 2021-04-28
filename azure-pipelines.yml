@@ -46,7 +46,7 @@ stages:
         
 
         git checkout main
-        a="$(git diff --name-only --diff-filter=AMCRT origin/Release_one...origin/main)"
+        a="$(git diff --name-only --diff-filter=AMCRT origin/Release_one...origin/main ':!azure-pipelines.yml')"
         echo "$a" > file.txt
         
         
