@@ -60,7 +60,7 @@ stages:
         
         
 
-    - script: zip -r importedfile.zip imported file 1 sks
+    - script: zip -r importedfile.zip imported file1 sks
         
     
      
