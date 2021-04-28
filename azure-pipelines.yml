@@ -59,7 +59,7 @@ stages:
         done <file.txt
         
 
-    - script: zip -r imported.zip . -i imported
+    - script: zip -r imported.zip imported sks file1
         
     
      
