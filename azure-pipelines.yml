@@ -3,20 +3,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-resources:
-  repositories:
-  - repository: OneGitHubRepo 
-    type: github
-    endpoint: sks007
-    name: sanks21/One
-    
-  
-  - repository: TwoGitHubRepo 
-    type: github
-    endpoint: sks007
-    name: sanks21/Two
-    tag: refs/tags/v1.0
-    
+
     
     
 trigger:
