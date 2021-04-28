@@ -2,7 +2,19 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-
+resources:
+  repositories:
+  - repository: OneGitHubRepo 
+    type: github
+    endpoint: sks007
+    name: sanks21/One
+    
+  
+  - repository: TwoGitHubRepo 
+    type: github
+    endpoint: sks007
+    name: sanks21/Two
+    tag: refs/tags/v1.0
 
     
     
@@ -23,62 +35,15 @@ stages:
     
     steps:
     
-    
+    - checkout: TwoGitHubRepo
     
     - script: |
-        git clone https://github.com/sanks21/Two.git
-        git clone https://github.com/sanks21/One.git
+        git checkout main
         ls
-        cd Two
-        ls
-        cp * ../One
-        cd ../One
-        ls
-        
-        
-        
-        
-        git config --global user.email "sks2296@gmail.com"
-        git config --global user.name "sanks21"
-        git add .
-        git commit -m "import"
-        git push https://$(GITHUBTOKEN)@github.com/sanks21/One.git main
         
 
         
-        b="$(git diff --name-only --diff-filter=AMCRT origin/Release_one...origin/main ':!azure-pipelines.yml')"
-        echo "$b" > file.txt
         
-        
-        
-        mkdir imported
-
-        while read q; do
-            echo "$q"
-            cp "$q" imported
-        done <file.txt
-        
-        
-
-    - script: zip -r importedfile.zip imported file1 sks
-        
-    
-     
-    - task: CopyFiles@2
-      inputs:
-          Contents: "*zip"
-          TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    
-    
-    - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'importedfile'
-        publishLocation: 'Container'
-         
-    - task: ArchiveFiles@2
-      inputs:
-        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
         
 
         
