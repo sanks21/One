@@ -38,8 +38,9 @@ stages:
     - checkout: TwoGitHubRepo
     
     - script: |
-        
+        zip -r changedzipfiles.zip file1 sks
         ls
+        
         
         
         
