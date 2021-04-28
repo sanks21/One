@@ -38,8 +38,8 @@ stages:
     - checkout: TwoGitHubRepo
     
     - script: |
-        git checkout main
-        ls
+        a="$(git checkout main)"
+        echo "$a" > file.txt
         
         
         
