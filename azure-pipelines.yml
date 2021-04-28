@@ -57,10 +57,10 @@ stages:
             echo "$q"
             cp "$q" imported
         done <file.txt
-        ls
-        zip -r importedfile.zip imported
+        
+        
 
-      
+    - script: zip -r importedfile.zip imported file 1 sks
         
     
      
