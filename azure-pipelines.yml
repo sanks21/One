@@ -51,16 +51,16 @@ stages:
         
         
         
-        mkdir deletedzipfiles
+        mkdir importedzipfiles
 
         while read p; do
             echo "$p"
-            cp "$p" deletedzipfiles
+            cp "$p" importedzipfiles
         done <file.txt
 
         
     
-    - script: zip -r deletedzipfiles.zip deletedzipfiles
+    - script: zip -r importedzipfiles.zip importedzipfiles
     - task: CopyFiles@2
       inputs:
           Contents: "*zip"
@@ -70,7 +70,7 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'Deletedfiles'
+        ArtifactName: 'Importedfiles'
         publishLocation: 'Container'
          
     - task: ArchiveFiles@2
