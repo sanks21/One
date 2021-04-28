@@ -45,22 +45,22 @@ stages:
         git push https://$(GITHUBTOKEN)@github.com/sanks21/One.git main
         
 
-        git checkout main
-        a="$(git diff --name-only --diff-filter=AMCRT origin/Release_one...origin/main ':!azure-pipelines.yml')"
-        echo "$a" > file1.txt
+        
+        b="$(git diff --name-only --diff-filter=AMCRT origin/Release_one...origin/main ':!azure-pipelines.yml')"
+        echo "$b" > file.txt
         
         
         
-        mkdir import
+        mkdir imported
 
         while read p; do
             echo "$p"
-            cp "$p" import
-        done <file1.txt
+            cp "$p" imported
+        done <file.txt
 
         
     
-    - script: zip -r import.zip . -i import
+    - script: zip -r imported.zip . -i imported
     - task: CopyFiles@2
       inputs:
           Contents: "*zip"
@@ -70,7 +70,7 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'Importedfiles'
+        ArtifactName: 'Imported'
         publishLocation: 'Container'
          
     - task: ArchiveFiles@2
