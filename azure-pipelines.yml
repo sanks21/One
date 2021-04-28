@@ -51,16 +51,16 @@ stages:
         
         
         
-        mkdir importedzipfiles
+        mkdir import
 
         while read p; do
             echo "$p"
-            cp "$p" importedzipfiles
+            cp "$p" import
         done <file1.txt
 
         
     
-    - script: zip -r importedzipfiles.zip . -i importedzipfiles
+    - script: zip -r import.zip . -i import
     - task: CopyFiles@2
       inputs:
           Contents: "*zip"
