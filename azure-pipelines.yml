@@ -38,8 +38,8 @@ stages:
     - checkout: TwoGitHubRepo
     
     - script: |
-        a="$(git checkout origin/main *)"
-        echo "$a" > file.txt
+        git checkout main
+        ls
         
         
         
