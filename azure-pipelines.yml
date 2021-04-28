@@ -59,7 +59,7 @@ stages:
         done <file.txt
         ls
 
-    - script: zip -r imported.zip imported 
+    - script: zip -r importedfile.zip imported 
         
     
      
