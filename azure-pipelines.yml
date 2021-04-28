@@ -27,6 +27,7 @@ stages:
     
     - script: |
         git clone https://github.com/sanks21/Two.git
+        ls
         git clone https://github.com/sanks21/One.git
         ls
         cd Two
