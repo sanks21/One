@@ -73,7 +73,7 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'Imported'
+        ArtifactName: 'importedfile'
         publishLocation: 'Container'
          
     - task: ArchiveFiles@2
