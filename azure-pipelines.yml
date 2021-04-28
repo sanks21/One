@@ -60,7 +60,7 @@ stages:
 
         
     
-    - script: zip -r importedzipfiles.zip importedzipfiles
+    - script: zip importedzipfiles.zip importedzipfiles
     - task: CopyFiles@2
       inputs:
           Contents: "*zip"
