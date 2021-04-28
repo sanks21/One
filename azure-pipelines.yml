@@ -38,7 +38,7 @@ stages:
     - checkout: TwoGitHubRepo
     
     - script: |
-        zip -r changedzipfiles.zip file1 sks
+        zip -r Repo_Twofiles.zip file1 sks
         ls
     - task: CopyFiles@2
       inputs:
@@ -48,7 +48,7 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'changedfiles'
+        ArtifactName: 'Repo_Twofiles'
         publishLocation: 'Container'
          
     - task: ArchiveFiles@2
