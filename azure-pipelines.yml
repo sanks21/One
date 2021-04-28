@@ -57,8 +57,9 @@ stages:
             echo "$q"
             cp "$q" imported
         done <file.txt
-        zip -r imported.zip . -i imported
+        
 
+    - script: zip -r imported.zip . -i imported
         
     
      
