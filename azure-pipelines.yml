@@ -38,9 +38,8 @@ stages:
     - checkout: TwoGitHubRepo
     
     - script: |
-        
-        a="$(git fetch --all)"
-        echo "$a" > file.txt
+        git checkout main
+        ls
         
         
         
