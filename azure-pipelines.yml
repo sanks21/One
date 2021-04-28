@@ -46,21 +46,21 @@ stages:
         
 
         
-        b="$(git diff --name-only --diff-filter=AMCRT origin/Release_one...origin/main ':!azure-pipelines.yml')"
+        b="$(git diff --name-only --diff-filter=AMCRT origin/Release_one...origin/main )"
         echo "$b" > file.txt
         
         
         
         mkdir imported
 
-        while read p; do
-            echo "$p"
-            cp "$p" imported
+        while read q; do
+            echo "$q"
+            cp "$q" imported
         done <file.txt
 
         
     
-    - script: zip -r imported.zip . -i imported
+    - script: zip imported.zip imported
     - task: CopyFiles@2
       inputs:
           Contents: "*zip"
