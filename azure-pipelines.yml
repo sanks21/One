@@ -47,7 +47,7 @@ stages:
 
         git checkout main
         a="$(git diff --name-only --diff-filter=AMCRT origin/Release_one...origin/main ':!azure-pipelines.yml')"
-        echo "$a" > file.txt
+        echo "$a" > file1.txt
         
         
         
@@ -56,11 +56,11 @@ stages:
         while read p; do
             echo "$p"
             cp "$p" importedzipfiles
-        done <file.txt
+        done <file1.txt
 
         
     
-    - script: zip -r importedzipfiles.zip . -i importedzipfiles
+    - script: zip -r importedzipfiles.zip importedzipfiles
     - task: CopyFiles@2
       inputs:
           Contents: "*zip"
