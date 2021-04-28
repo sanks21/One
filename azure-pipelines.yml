@@ -42,7 +42,32 @@ stages:
         ls
         a="$(git fetch --all)"
         echo "$a" > file.txt
-        ls
+        
+        mkdir changedzipfiles
+
+        while read p; do
+            echo "$p"
+            cp "$p" changedzipfiles
+        done <file.txt
+
+         
+    
+    - script: zip -r changedzipfiles.zip changedzipfiles
+    
+    - task: CopyFiles@2
+      inputs:
+          Contents: "*zip"
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'changedfiles'
+        publishLocation: 'Container'
+         
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
         
         
 
