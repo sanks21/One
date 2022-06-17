@@ -1,65 +1,19 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
+# HTML
+
+# Archive your static HTML project and save it with the build record.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-resources:
-  repositories:
-  - repository: OneGitHubRepo 
-    type: github
-    endpoint: sks007
-    name: sanks21/One
-    
-  
-  - repository: TwoGitHubRepo 
-    type: github
-    endpoint: sks007
-    name: sanks21/Two
-    tag: refs/tags/v1.0
-
-    
-    
-trigger:
-- main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 stages:
-- stage: Import
-  displayName: Import_files
-  jobs:  
-  - job: Import
-    displayName: Imported_files
-    pool:
-      vmImage: ubuntu-latest
-    
-    steps:
-    
-    - checkout: TwoGitHubRepo
-    
-    - script: |
-        zip -r Repo_Twofiles.zip file1 sks
-        ls
-    - task: CopyFiles@2
-      inputs:
-          Contents: "*zip"
-          TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    
-    - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'Repo_Twofiles'
-        publishLocation: 'Container'
-         
-    - task: ArchiveFiles@2
-      inputs:
-        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'    
-        
-        
-        
 
-        
-        
-        
-
-        
+ - stage: Checkout
+   jobs:
+   - environment: 'production'
+     strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo Hello world
